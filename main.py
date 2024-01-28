@@ -8,7 +8,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI"))
 file_id = 'file-tWDjaLWYr85RtjaF8YVSJzhP'
 assistant_id = "asst_7aMJYGOFx8Li3qDwc9OTQZ3y"
-thread_id = "thread_B4IGinqnsKeBFHTjlJor4eTf"
+thread_id = "thread_lqbiWGqM0qppAv10KOqWmj97"
 
 
 def polling_for_run_status(run):
