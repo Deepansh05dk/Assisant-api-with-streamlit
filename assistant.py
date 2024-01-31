@@ -1,10 +1,10 @@
 
-# from openai import OpenAI
-# from dotenv import load_dotenv
-# import os
-# load_dotenv()
+from openai import OpenAI
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-# client = OpenAI(api_key=os.getenv("OPENAI"))
+client = OpenAI(api_key=os.getenv("OPENAI"))
 # # file_id = 'file-tWDjaLWYr85RtjaF8YVSJzhP'
 # # # file = client.files.create(
 # # #     file=open("jackjayio_extracted_data.json", "rb"),
@@ -50,3 +50,21 @@
 
 # client.beta.assistants.update(assistant_id="asst_7aMJYGOFx8Li3qDwc9OTQZ3y",instructions='You are a tweet generator on behalf of the @jackjayio account. I am giving it to you as a JSON file with an array of tweet objects. Each tweet object has a structure like this:{"text" : ...,"likes": ...,"retweets": ...,}.Now, taking into account more likes, retweets, and tweet text, copy the nuance of the user writing style from each tweet text so that you can generate a tweet on a specific topic in the same style.')
 
+
+
+
+# thread = client.beta.threads.create()
+# print(thread.id)
+
+# while 1:
+#     a=input()
+
+#     client.beta.threads.messages.create(
+#                 thread_id=thread.id,
+#                 role="user",
+#                 content="hello"
+#             )
+#     run = client.beta.threads.runs.create(
+#         thread_id=thread.id,
+#         assistant_id="asst_7aMJYGOFx8Li3qDwc9OTQZ3y"
+#     )

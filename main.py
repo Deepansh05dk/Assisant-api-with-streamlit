@@ -8,7 +8,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI"))
 file_id = 'file-tWDjaLWYr85RtjaF8YVSJzhP'
 assistant_id = "asst_7aMJYGOFx8Li3qDwc9OTQZ3y"
-thread_id = "thread_lqbiWGqM0qppAv10KOqWmj97"
+thread_id = "thread_2yHRETtOdQf3cX1CawZI9wAO"
 
 
 def polling_for_run_status(run):
@@ -64,7 +64,6 @@ def create_new_message(prompt):
         run = client.beta.threads.runs.create(
             thread_id=thread_id,
             assistant_id=assistant_id,
-            instructions="Please address the user as Jackson."
         )
         polling_for_run_status(run=run)
 
