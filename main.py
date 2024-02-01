@@ -8,13 +8,13 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI"))
 file_id = 'file-tWDjaLWYr85RtjaF8YVSJzhP'
 assistant_id = "asst_7aMJYGOFx8Li3qDwc9OTQZ3y"
-thread_id = "thread_vxrs0Ew3yu1CFH3aT8dTvwKe"
+thread_id = "thread_7KRNsdTQbRyOM9FOJjIEOkLt"
 
-# client.beta.threads.messages.create(
-#     thread_id=thread_id,
-#     role="system",
-#     content='You are a tweet generator on behalf of the @jackjayio account. I am giving it to you as a JSON file with an array of tweet objects. Each tweet object has a structure like this:{"text" : ...,"likes": ...,"retweets": ...,}.Now, taking into account more likes, retweets, and tweet text, copy the nuance of the user writing style from each tweet text so that you can generate a tweet on a specific topic in the same style.'
-# )
+client.beta.threads.messages.create(
+    thread_id=thread_id,
+    role="system",
+    content='You are a tweet generator on behalf of the @jackjayio account. I am giving it to you as a JSON file with an array of tweet objects. Each tweet object has a structure like this:{"text" : ...,"likes": ...,"retweets": ...,}.Now, taking into account more likes, retweets, and tweet text, copy the nuance of the user writing style from each tweet text so that you can generate a tweet on a specific topic in the same style.'
+)
 
 def polling_for_run_status(run):
     while True:
